@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Inter:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --deep-black: #030504;
+    --neon-green: #39FF14;
+    --brand-orange: #FF5722;
+    --warm-white: #F5F5F0;
+    --surface-dark: #0A0F0C;
+    --surface-medium: #141916;
+    --glass: rgba(10, 15, 12, 0.7);
+    --green-glow: rgba(57, 255, 20, 0.4);
+
+    --background: 150 33% 1.6%;
+    --foreground: 60 14% 95%;
+    --card: 150 20% 4%;
+    --card-foreground: 60 14% 95%;
+    --popover: 150 20% 4%;
+    --popover-foreground: 60 14% 95%;
+    --primary: 109 100% 54%;
+    --primary-foreground: 150 33% 1.6%;
+    --secondary: 150 15% 8%;
+    --secondary-foreground: 60 14% 95%;
+    --muted: 150 15% 8%;
+    --muted-foreground: 60 5% 55%;
+    --accent: 14 100% 57%;
+    --accent-foreground: 60 14% 95%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 60 14% 95%;
+    --border: 150 15% 12%;
+    --input: 150 15% 12%;
+    --ring: 109 100% 54%;
+    --radius: 0.625rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--deep-black);
+    color: var(--warm-white);
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: var(--neon-green);
+    color: var(--deep-black);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--deep-black);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(57, 255, 20, 0.3);
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(57, 255, 20, 0.5);
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply py-[clamp(80px,10vh,120px)] px-6 md:px-12 lg:px-20;
+  }
+
+  .container-max {
+    @apply max-w-[1400px] mx-auto;
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, #39FF14 0%, #FF5722 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .border-gradient {
+    border-image: linear-gradient(90deg, transparent, #39FF14, transparent) 1;
+  }
+
+  .neon-glow {
+    box-shadow: 0 0 20px rgba(57, 255, 20, 0.3);
+  }
+
+  .glass-panel {
+    background: rgba(10, 15, 12, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+}
